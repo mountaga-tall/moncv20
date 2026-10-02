@@ -8,8 +8,8 @@ langs={
 }
 
 def nav(l):
- x=langs[l]; other={'fr':'en','en':'es','es':'fr'}[l]
- return f'''<header class="site-header"><div class="container nav"><a class="brand" href="./"><div class="mark">MT</div><div><strong>MONCV20</strong><small>MOUNTAGA TALL</small></div></a><div class="lang"><a class="active" href="../{l}/">{l.upper()}</a><a href="../{other}/">{other.upper()}</a></div><button class="menu" aria-expanded="false">☰</button><nav class="main-nav"><a href="../{l}/">{x['home']}</a><a href="../{l}/formation/">{x['formation']}</a><a href="../{l}/experiences/">{x['exp']}</a><a href="../{l}/domaines/">{x['domains']}</a><a href="../{l}/certificats/">{x['cert']}</a><a href="../{l}/interets/">{x['interests']}</a><a href="../{l}/contact/">{x['contact']}</a></nav></div></header>'''
+ x=langs[l]; others=[z for z in ('fr','en','es') if z!=l]
+ return f'''<header class="site-header"><div class="container nav"><a class="brand" href="./"><div class="mark">MT</div><div><strong>MONCV20</strong><small>MOUNTAGA TALL</small></div></a><div class="lang"><a class="active" href="../{l}/">{l.upper()}</a><a href="../{others[0]}/">{others[0].upper()}</a><a href="../{others[1]}/">{others[1].upper()}</a></div></div><div class="container nav"><button class="menu" aria-expanded="false">☰</button><nav class="main-nav"><a href="../{l}/">{x['home']}</a><a href="../{l}/formation/">{x['formation']}</a><a href="../{l}/experiences/">{x['exp']}</a><a href="../{l}/domaines/">{x['domains']}</a><a href="../{l}/certificats/">{x['cert']}</a><a href="../{l}/interets/">{x['interests']}</a><a href="../{l}/contact/">{x['contact']}</a></nav></div></header>'''
 
 def footer(l): return f'''<footer class="footer"><div class="container footer-inner"><span>© <span class="year"></span> Mountaga TALL · MonCV20</span><span><a href="../fr/">FR</a> · <a href="../en/">EN</a> · <a href="../es/">ES</a></span></div></footer><script src="../script.js"></script>'''
 
